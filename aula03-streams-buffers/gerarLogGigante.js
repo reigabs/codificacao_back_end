@@ -8,7 +8,6 @@ console.log('Gerando arquivo de log simulado...');
 
 for( let i=0; i < 4000; i++){
     const tipo = i % 7 === 0 ? 'ERROR' : 'INFO';
-    streamEscrita.write(`[${data} - ${hora}] Linha ${i}: Status 200
-        - Mensagem de teste ${tipo} \n`);
+    streamEscrita.write(`[${data} - ${hora}] Linha ${i}: Status 200 - Mensagem de teste ${tipo} \n`);
 }
 streamEscrita.end();
