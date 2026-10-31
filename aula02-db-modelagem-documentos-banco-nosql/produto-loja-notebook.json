@@ -1,0 +1,16 @@
+{
+    "nome":"Notebook Acer V15",
+    "categoria":"Informática",
+    "preco":5600.00,
+    "estoque":21,
+    "especificacoesTenicas":{
+        "ram":"16GB",
+        "processador":"Intel Core i7 14700HS",
+        "armazenamento":"1TB"
+    },
+    "tags":[
+        "notebook",
+        "acer",
+        "informatica"
+    ]
+}
