@@ -1,0 +1,18 @@
+{
+    "texto": "Instagram é uma rede social de compartilhamento de fotos e vídeos.",
+    "autor":"Fernando da silva",
+    "dataPostagem":"2023-01-10",
+    "likes":[
+        {"nome":"paulo_jogos"},
+        {"nome":"mariazinha_123"},
+        {"nome":"pedro_silva"},
+        {"nome":"alerrandro_gameplay"}
+    ],
+    "comentarios": [
+        {"autor":"paulo_jogos", "dataComentario":"2023-01-15", "texto":"Ótimo post, sou 13 S2!"},
+        {"autor":"mariazinha_123", "dataComentario":"2023-01-16", "texto":"Muito interessante, 67 demais!"},
+        {"autor":"pedro_silva", "dataComentario":"2023-01-20", "texto":"MUITA AURAAAAAAAAAAAAA!"},
+        {"autor":"alerrandro_gameplay", "dataComentario":"2023-06-07", "texto":"muita aurinha"}
+    ]
+    
+}
