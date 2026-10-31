@@ -1,0 +1,19 @@
+{
+    "nome":"Alerrandro Henrique",
+    "nomeSocial":"Fernanda Surtadinha",
+    "matricula":"2026TISENAI02",
+    "dataNascimento":"2006-12-16",
+    "curso":"Tecnico em Desenvolvimento de Sistemas",
+    "disciplinas":[
+        {"nome":"Banco de Dados NoSQL","nota":9.5},
+        {"nome":"Desenvolvimento Web", "nota":8.8}
+    ],
+    "endereco":{
+        "rua":"Rua das Flores",
+        "numero":123,
+        "bairro":"Jardim Felicidade 1",
+        "cidade":"Macapá",
+        "estado":"AP",
+        "cep":"68909031"
+    }
+}
