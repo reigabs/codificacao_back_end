@@ -1,5 +1,5 @@
 import { Injectable, NotFoundException } from '@nestjs/common';
-import {  InjectModel } from '@nestjs/mongoose';
+import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateAlunoDto } from './dto/create-aluno.dto.js';
 import { UpdateAlunoDto } from './dto/update-aluno.dto.js';
@@ -20,9 +20,27 @@ export class AlunosService {
         return createAluno.save();
     }
 
-    async findAll(): Promise <Aluno[]> {
-        return this.alunoModel.find().exec();
-    }  
+    // async findAll(): Promise <Aluno[]> {
+    //     return this.alunoModel.find().exec();
+    // }  
+
+    //! Método para buscar todos os alunos com paginação
+    async findPage(page: number, limit: number){
+        const skip = (page - 1) * limit;
+        const [data, total] = await Promise.all([
+            this.alunoModel.find().skip(skip).limit(limit).exec(),
+            this.alunoModel.countDocuments().exec(),
+        ]);
+        return {
+            data,
+        meta: {
+            total,
+            page,
+            limit,
+            totalPages: Math.ceil(total / limit),
+           },
+        };
+    }
 
     async findOne(id: string): Promise <Aluno> {
         const aluno = await this.alunoModel.findById(id).exec();
