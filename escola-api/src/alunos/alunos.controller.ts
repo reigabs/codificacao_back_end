@@ -36,19 +36,19 @@ export class AlunosController {
         return this.alunosService.create(createAlunoDto);
     }
 
-    @Get()
-    @ApiOperation({
-        summary: 'Listar todos os alunos',
-    })
-    @ApiResponse({
-        status: 200,
-        description: 'Lista de alunos retornada com sucesso.'
-    })
-    @ApiResponse({
-        status: 404,
-        description: 'Nenhum aluno encontrado.'
-    })
-    @ApiResponse({})
+    // @Get()
+    // @ApiOperation({
+    //     summary: 'Listar todos os alunos',
+    // })
+    // @ApiResponse({
+    //     status: 200,
+    //     description: 'Lista de alunos retornada com sucesso.'
+    // })
+    // @ApiResponse({
+    //     status: 404,
+    //     description: 'Nenhum aluno encontrado.'
+    // })
+    // @ApiResponse({})
 
     // findAll() {
     //     return this.alunosService.findAll();
@@ -83,11 +83,25 @@ export class AlunosController {
         type: Number,
         description: 'Número de alunos por página (padrão: 10)',
     })
+    @ApiQuery({
+        name: 'nome',
+        required: false,
+        type: String,
+        description: 'Filtrar alunos pelo nome (exemplo: Jamilly)',
+    })
+    @ApiQuery({
+        name: 'curso',
+        required: false,
+        type: String,
+        description: 'Filtrar alunos pelo curso (exemplo: Engenharia Civil)',
+    })
     findPage(
         @Query('page', new DefaultValuePipe(1), ParseIntPipe) page: number,
         @Query('limit', new DefaultValuePipe(10), ParseIntPipe) limit: number,
+        @Query('nome') nome?: string,
+        @Query('curso') curso?: string,
     ) {
-        return this.alunosService.findPage(page, limit);
+        return this.alunosService.findPage(page, limit, nome, curso);
     }
 
     @Get(':id')
